@@ -42,7 +42,7 @@ class ImageUploadPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Image Upload';
+    return 'Subir Imágenes';
   }
 }
 

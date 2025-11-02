@@ -128,21 +128,21 @@ class ToolBarWidget extends StatelessWidget {
               items: <PopupMenuItem<String>>[
                 PopupMenuItem<String>(
                   value: 'value01',
-                  child: Text('My Profile'),
+                  child: Text('Mi Perfil'),
                   onTap: () async {
                     onProfileClick(context);
                   },
                 ),
                 PopupMenuItem<String>(
                   value: 'value02',
-                  child: Text('My Contacts'),
+                  child: Text('Mis Contactos'),
                   onTap: () async {
                     onContactClick(context);
                   },
                 ),
                 PopupMenuItem<String>(
                   value: 'value03',
-                  child: Text('Settings'),
+                  child: Text('Configuración'),
                   onTap: () async {
 
                   },
@@ -150,7 +150,7 @@ class ToolBarWidget extends StatelessWidget {
                 // Language selector removed - CETAM uses Spanish only
                 PopupMenuItem<String>(
                   value: 'value05',
-                  child: Text('Log out'),
+                  child: Text('Cerrar Sesión'),
                   onTap: () {
                     onLogoutClick(context);
                   },

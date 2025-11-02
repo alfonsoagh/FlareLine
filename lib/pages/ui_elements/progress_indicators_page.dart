@@ -44,7 +44,7 @@ class ProgressIndicatorsPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Progress Indicators';
+    return 'Indicadores de Progreso';
   }
 }
 

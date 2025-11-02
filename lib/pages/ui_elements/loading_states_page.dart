@@ -43,7 +43,7 @@ class LoadingStatesPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Loading States';
+    return 'Estados de Carga';
   }
 }
 

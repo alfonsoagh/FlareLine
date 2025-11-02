@@ -279,6 +279,6 @@ class TextFieldPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Text Fields';
+    return 'Campos de Texto';
   }
 }

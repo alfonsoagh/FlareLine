@@ -44,7 +44,7 @@ class CardsPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Cards';
+    return 'Tarjetas';
   }
 }
 

@@ -15,7 +15,7 @@ class ContactsPage extends LayoutWidget {
   @override
   String breakTabTitle(BuildContext context) {
     // TODO: implement breakTabTitle
-    return 'Contacts';
+    return 'Contactos';
   }
 
   @override

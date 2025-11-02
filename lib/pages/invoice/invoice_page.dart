@@ -12,7 +12,7 @@ class InvoicePage extends LayoutWidget {
   @override
   String breakTabTitle(BuildContext context) {
     // TODO: implement title
-    return 'Invoice';
+    return 'Factura';
   }
 
   @override
@@ -25,7 +25,7 @@ class InvoicePage extends LayoutWidget {
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('From', style: TextStyle(fontSize: 14)),
+            Text('De', style: TextStyle(fontSize: 14)),
             SizedBox(height: 8),
             Text('Roger Culhane',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
@@ -41,7 +41,7 @@ class InvoicePage extends LayoutWidget {
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('To', style: TextStyle(fontSize: 14)),
+            Text('Para', style: TextStyle(fontSize: 14)),
             SizedBox(height: 8),
             Text('Cristofer Levin',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
@@ -53,7 +53,7 @@ class InvoicePage extends LayoutWidget {
           ],
         ),
         const SizedBox(height: 16),
-        const Text('Order #15478',
+        const Text('Pedido #15478',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         const SizedBox(height: 16),
         // Product
@@ -72,7 +72,7 @@ class InvoicePage extends LayoutWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Mist Black Triblend'),
-                      Text('Color: White  Size: Medium',
+                      Text('Color: Blanco  Tamaño: Mediano',
                           style: TextStyle(fontSize: 12)),
                     ],
                   ),
@@ -83,7 +83,7 @@ class InvoicePage extends LayoutWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Qty: 01'),
+                Text('Cant.: 01'),
                 Text('\$120.00', style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
@@ -94,18 +94,18 @@ class InvoicePage extends LayoutWidget {
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Shipping Method',
+            Text('Método de envío',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             SizedBox(height: 8),
-            Text('FedEx - Take up to 3', style: TextStyle(fontSize: 12)),
-            Text('working days.', style: TextStyle(fontSize: 10)),
+            Text('FedEx - Hasta 3', style: TextStyle(fontSize: 12)),
+            Text('días laborables.', style: TextStyle(fontSize: 10)),
           ],
         ),
         const SizedBox(height: 16),
         const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Payment Method',
+            Text('Método de pago',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             SizedBox(height: 8),
             Text('Apply Pay Mastercard', style: TextStyle(fontSize: 12)),
@@ -128,7 +128,7 @@ class InvoicePage extends LayoutWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Shipping Cost'),
+                Text('Costo de envío'),
                 Text('(+) \$10.00'),
               ],
             ),
@@ -138,7 +138,7 @@ class InvoicePage extends LayoutWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Total Payable',
+                Text('Total a pagar',
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 Text('\$130.00',
                     style: TextStyle(fontWeight: FontWeight.bold)),
@@ -152,12 +152,12 @@ class InvoicePage extends LayoutWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ButtonWidget(
-              btnText: 'Download Invoice',
+              btnText: 'Descargar factura',
               type: ButtonType.primary.type,
             ),
             const SizedBox(height: 8),
             ButtonWidget(
-              btnText: 'Send Invoice',
+              btnText: 'Enviar factura',
               type: ButtonType.success.type,
             ),
           ],
@@ -177,7 +177,7 @@ class InvoicePage extends LayoutWidget {
           children: [
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'From',
+                'De',
                 style: TextStyle(fontSize: 14),
               ),
               SizedBox(
@@ -201,7 +201,7 @@ class InvoicePage extends LayoutWidget {
             ),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'To',
+                'Para',
                 style: TextStyle(fontSize: 14),
               ),
               SizedBox(
@@ -222,7 +222,7 @@ class InvoicePage extends LayoutWidget {
             ]),
             Spacer(),
             Text(
-              'Order #15478',
+              'Pedido #15478',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             )
           ],
@@ -248,13 +248,13 @@ class InvoicePage extends LayoutWidget {
               children: [
                 Text('Mist Black Triblend'),
                 Text(
-                  'Color: White  Size: Medium',
+                  'Color: Blanco  Tamaño: Mediano',
                   style: TextStyle(fontSize: 13),
                 ),
               ],
             ),
             const Spacer(),
-            const Text('Qty: 01'),
+            const Text('Cant.: 01'),
             const SizedBox(
               width: 20,
             ),
@@ -268,24 +268,24 @@ class InvoicePage extends LayoutWidget {
           children: [
             const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'Shipping Method',
+                'Método de envío',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 10,
               ),
-              Text('FedEx - Take up to 3', style: TextStyle(fontSize: 14)),
+              Text('FedEx - Hasta 3', style: TextStyle(fontSize: 14)),
               SizedBox(
                 height: 10,
               ),
-              Text('working days.', style: TextStyle(fontSize: 10)),
+              Text('días laborables.', style: TextStyle(fontSize: 10)),
             ]),
             const SizedBox(
               width: 20,
             ),
             const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'Payment Method',
+                'Método de pago',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -317,7 +317,7 @@ class InvoicePage extends LayoutWidget {
                   ),
                   const Row(
                     children: [
-                      Text('Shipping Cost '),
+                      Text('Costo de envío '),
                       SizedBox(
                         width: 100,
                       ),
@@ -336,7 +336,7 @@ class InvoicePage extends LayoutWidget {
                   ),
                   const Row(
                     children: [
-                      Text('Total Payable '),
+                      Text('Total a pagar '),
                       Expanded(child: Text('\$130.00',textAlign: TextAlign.end,)),
                     ],
                   ),
@@ -353,7 +353,7 @@ class InvoicePage extends LayoutWidget {
           SizedBox(
             width: 150,
             child: ButtonWidget(
-              btnText: 'Download Invoice',
+              btnText: 'Descargar factura',
               type: ButtonType.primary.type,
             ),
           ),
@@ -363,7 +363,7 @@ class InvoicePage extends LayoutWidget {
           SizedBox(
               width: 150,
               child: ButtonWidget(
-                btnText: 'Send Invoice',
+                btnText: 'Enviar factura',
                 type: ButtonType.success.type,
               )),
         ])

@@ -16,7 +16,7 @@ class ToolsPage extends LayoutWidget {
 
   @override
   String breakTabTitle(BuildContext context) {
-    return 'Tools';
+    return 'Herramientas';
   }
 
   _sideListWidget(BuildContext context, bool isDark) {

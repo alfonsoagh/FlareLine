@@ -172,7 +172,7 @@ class SignInWidget extends BaseWidget<SignInProvider> {
               keyboardType: TextInputType.emailAddress,
               validator: (value) {
                 if (value!.isEmpty || !value.contains('@')) {
-                  return 'Please enter a valid email address';
+                  return 'Por favor ingrese un correo electrónico válido';
                 } else {
                   return null;
                 }
@@ -194,7 +194,7 @@ class SignInWidget extends BaseWidget<SignInProvider> {
               keyboardType: TextInputType.visiblePassword,
               validator: (value) {
                 if (value!.isEmpty || value.length < 6) {
-                  return 'Please enter a valid password';
+                  return 'Por favor ingrese una contraseña válida';
                 } else {
                   return null;
                 }

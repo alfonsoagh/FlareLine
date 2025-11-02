@@ -10,7 +10,7 @@ class InboxWidget extends LayoutWidget {
   @override
   String breakTabTitle(BuildContext context) {
     // TODO: implement title
-    return 'Inbox';
+    return 'Bandeja de entrada';
   }
 
   @override
@@ -27,36 +27,36 @@ class InboxWidget extends LayoutWidget {
               height: 30,
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Compose',style: TextStyle(color: Colors.white),),
+              child: Text('Redactar',style: TextStyle(color: Colors.white),),
               decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.circular(4)),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Inbox'),
+              title: Text('Bandeja de entrada'),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Started'),
+              title: Text('Destacados'),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Snoozed'),
+              title: Text('Pospuestos'),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Sent'),
+              title: Text('Enviados'),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Drafts'),
+              title: Text('Borradores'),
             ),
             const SizedBox(height: 10,),
             const ListTile(
-              title: Text('Spam'),
+              title: Text('Correo no deseado'),
             ),
             SizedBox(height: 10,),
             const ListTile(
-              title: Text('Trash'),
+              title: Text('Papelera'),
             ),
           ]),
         ),

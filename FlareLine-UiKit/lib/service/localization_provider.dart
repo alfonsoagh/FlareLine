@@ -22,7 +22,7 @@ class LocalizationProvider extends BaseViewModel {
 
   List<Locale>? _supportedLocales;
 
-  Locale get locale => _locale ?? const Locale.fromSubtags(languageCode: 'en');
+  Locale get locale => _locale ?? const Locale.fromSubtags(languageCode: 'es');
 
   String get languageCode => locale.languageCode;
 
