@@ -207,6 +207,57 @@ class SignInWidget extends BaseWidget<SignInProvider> {
               controller: viewModel.passwordController,
             ),
             const SizedBox(
+              height: 16,
+            ),
+            // Recuérdame / ¿Olvidaste la contraseña? (responsivo)
+            LayoutBuilder(builder: (context, constraints) {
+              final isNarrow = constraints.maxWidth < 420;
+              final remember = Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Checkbox(
+                    value: viewModel.rememberMe,
+                    onChanged: (v) => viewModel.rememberMe = v ?? false,
+                  ),
+                  Flexible(
+                    child: Text(
+                      AppLocalizations.of(context)!.rememberMe,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              );
+              final forgot = InkWell(
+                child: Text(
+                  AppLocalizations.of(context)!.forgetPwd,
+                  style: const TextStyle(
+                    color: GlobalColors.secondary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).popAndPushNamed('/resetPwd');
+                },
+              );
+
+              if (isNarrow) {
+                return Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  runAlignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [remember, forgot],
+                );
+              }
+              return Row(
+                children: [
+                  Expanded(child: remember),
+                  forgot,
+                ],
+              );
+            }),
+            const SizedBox(
               height: 20,
             ),
             ButtonWidget(

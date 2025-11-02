@@ -157,24 +157,38 @@ class FormLayoutPage extends LayoutWidget {
             const SizedBox(
               height: 16,
             ),
-            Row(
-              children: [
-                ValueListenableBuilder(
-                    valueListenable: checkNotifier1,
-                    builder: (ctx, res, widget) {
-                      return Checkbox(
-                        value: res,
-                        activeColor: Colors.red, //选中时的颜色
-                        onChanged: (value) {
-                          checkNotifier1.value = value ?? false;
-                        },
-                      );
-                    }),
-                Text(AppLocalizations.of(context)!.rememberMe),
-                const Spacer(),
-                Text(AppLocalizations.of(context)!.forgetPwd)
-              ],
-            ),
+            LayoutBuilder(builder: (context, constraints) {
+              final isNarrow = constraints.maxWidth < 420;
+              final remember = Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ValueListenableBuilder(
+                      valueListenable: checkNotifier1,
+                      builder: (ctx, res, widget) {
+                        return Checkbox(
+                          value: res,
+                          activeColor: Colors.red,
+                          onChanged: (value) {
+                            checkNotifier1.value = value ?? false;
+                          },
+                        );
+                      }),
+                  const SizedBox(width: 4),
+                  Flexible(child: Text(AppLocalizations.of(context)!.rememberMe, overflow: TextOverflow.ellipsis)),
+                ],
+              );
+              final forgot = Text(AppLocalizations.of(context)!.forgetPwd);
+              if (isNarrow) {
+                return Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [remember, forgot],
+                );
+              }
+              return Row(children: [Expanded(child: remember), forgot]);
+            }),
             const SizedBox(
               height: 16,
             ),

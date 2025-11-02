@@ -1,5 +1,3 @@
-
-
 import 'package:flareline_uikit/core/mvvm/base_viewmodel.dart';
 import 'package:flareline_uikit/utils/snackbar_util.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +5,13 @@ import 'package:flutter/material.dart';
 class SignInProvider extends BaseViewModel {
   late TextEditingController emailController;
   late TextEditingController passwordController;
+
+  bool _rememberMe = false;
+  bool get rememberMe => _rememberMe;
+  set rememberMe(bool v) {
+    _rememberMe = v;
+    notifyListeners();
+  }
 
   SignInProvider(BuildContext ctx) : super(ctx) {
     emailController = TextEditingController();

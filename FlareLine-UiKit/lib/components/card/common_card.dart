@@ -32,18 +32,6 @@ class CommonCard extends StatelessWidget {
           height: height,
           child: child,
         ));
-    // return Card(
-    //     color: color,
-    //     child: title != null
-    //         ? _titleWidget(
-    //             title ?? '',
-    //             childWidget,
-    //           )
-    //         : childWidget,
-    //     shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.all(Radius.circular(2.0)),
-    //       side: BorderSide(width: 1, color: Color(0xFFE2E8F0)),
-    //     ));
     return Container(
       decoration: ShapeDecoration(
         color: color ?? Theme.of(context).cardTheme?.color,
@@ -75,11 +63,20 @@ class CommonCard extends StatelessWidget {
 
   _titleWidget(String title, Widget childWidget) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Container(
-        height: 50,
-        padding: const EdgeInsets.only(left: 10),
-        alignment: Alignment.centerLeft,
-        child: Text(title),
+      // título flexible: al menos 50px de alto, hasta 2 líneas
+      ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 50),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ),
       ),
       const Divider(
         height: 1,

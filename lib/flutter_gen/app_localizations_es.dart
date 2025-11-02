@@ -260,8 +260,7 @@ class AppLocalizationsEs extends AppLocalizations {
       'Ingrese su dirección de correo electrónico para recibir un enlace de restablecimiento de contraseña.';
 
   @override
-  String get sendPwdResetLink =>
-      'Enviar Enlace de Restablecimiento de Contraseña';
+  String get sendPwdResetLink => 'Enviar';
 
   @override
   String get settings => 'Configuración';

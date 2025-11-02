@@ -142,8 +142,8 @@ abstract class FlarelineLayoutWidget extends StatelessWidget {
     Widget contentWidget = Column(
       children: [
         if (showTitle)
-          SizedBox(
-            height: 50,
+          ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 50),
             child: breakTabWidget(context) ??
                 BreakTab(
                   breakTabTitle(context),

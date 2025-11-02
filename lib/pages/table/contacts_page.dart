@@ -1,4 +1,3 @@
-
 import 'package:flareline_uikit/components/tables/table_widget.dart';
 import 'package:flareline_uikit/entity/table_data_entity.dart';
 import 'package:flareline/pages/layout.dart';
@@ -25,6 +24,36 @@ class ContactsPage extends LayoutWidget {
 }
 
 class DataTableWidget extends TableWidget<ContactsViewModel> {
+  @override
+  String? title(BuildContext context) => 'Contactos';
+
+  // Fijamos anchos razonables por columna; en móvil ocultamos algunas
+  @override
+  double gridColumnWidgetWidth(String e, bool isMobile) {
+    switch (e) {
+      case 'Contact Name':
+        return isMobile ? 150 : 220;
+      case 'Last Contacted':
+        return isMobile ? 140 : 180;
+      case 'Company':
+        return isMobile ? 140 : 180;
+      case 'Contact':
+        return isMobile ? 220 : 300;
+      case 'Lead Score':
+        return isMobile ? 140 : 180;
+      default:
+        return super.gridColumnWidgetWidth(e, isMobile);
+    }
+  }
+
+  @override
+  bool isColumnVisible(String columnName, bool isMobile) {
+    if (!isMobile) return true;
+    // En móvil mostramos lo esencial
+    return columnName == 'Contact Name' ||
+        columnName == 'Last Contacted' ||
+        columnName == 'Contact';
+  }
 
   @override
   ContactsViewModel viewModelBuilder(BuildContext context) {

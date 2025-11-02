@@ -53,50 +53,55 @@ class ResetPwdWidget extends LayoutWidget {
   Widget contentMobileWidget(BuildContext context) {
     return Center(
       child: CommonCard(
-        padding: const EdgeInsets.symmetric(vertical: 60),
+        padding: const EdgeInsets.symmetric(vertical: 40),
         child: _formWidget(context),
       ),
     );
   }
 
   Widget _formWidget(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            AppLocalizations.of(context)!.resetPwd,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          Text(AppLocalizations.of(context)!.emailReceiveResetLink),
-          const SizedBox(
-            height: 20,
-          ),
-          OutBorderTextFormField(
-            labelText: AppLocalizations.of(context)!.email,
-            hintText: AppLocalizations.of(context)!.emailHint,
-            keyboardType: TextInputType.emailAddress,
-            suffixWidget: SvgPicture.asset(
-              'assets/signin/email.svg',
-              width: 22,
-              height: 22,
+    final double w = MediaQuery.of(context).size.width;
+    final double hPad = w < 360 ? 16 : (w < 480 ? 24 : 50);
+
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: hPad),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              AppLocalizations.of(context)!.resetPwd,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ButtonWidget(
-            btnText: AppLocalizations.of(context)!.sendPwdResetLink,
-            type: ButtonType.primary.type,
-            onTap: () {
-              Navigator.of(context).popAndPushNamed("/");
-            },
-          ),
-        ],
+            const SizedBox(
+              height: 12,
+            ),
+            Text(AppLocalizations.of(context)!.emailReceiveResetLink),
+            const SizedBox(
+              height: 20,
+            ),
+            OutBorderTextFormField(
+              labelText: AppLocalizations.of(context)!.email,
+              hintText: AppLocalizations.of(context)!.emailHint,
+              keyboardType: TextInputType.emailAddress,
+              suffixWidget: SvgPicture.asset(
+                'assets/signin/email.svg',
+                width: 22,
+                height: 22,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ButtonWidget(
+              btnText: AppLocalizations.of(context)!.sendPwdResetLink,
+              type: ButtonType.primary.type,
+              onTap: () {
+                Navigator.of(context).popAndPushNamed("/");
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
