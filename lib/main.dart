@@ -60,11 +60,8 @@ class MyApp extends StatelessWidget {
             supportedLocales: AppLocalizations.supportedLocales,
             onGenerateRoute: (settings) =>
                 RouteConfiguration.onGenerateRoute(settings),
-            themeMode: context.watch<ThemeProvider>().isDark
-                ? ThemeMode.dark
-                : ThemeMode.light,
+            themeMode: ThemeMode.light, // CETAM standard - light mode only
             theme: GlobalTheme.lightThemeData,
-            darkTheme: GlobalTheme.darkThemeData,
             builder: (context, widget) {
               return MediaQuery(
                 data: MediaQuery.of(context)

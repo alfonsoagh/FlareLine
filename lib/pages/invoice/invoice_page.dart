@@ -16,6 +16,157 @@ class InvoicePage extends LayoutWidget {
   }
 
   @override
+  Widget contentMobileWidget(BuildContext context) {
+    return CommonCard(
+        child: Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(children: [
+        // From section
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('From', style: TextStyle(fontSize: 14)),
+            SizedBox(height: 8),
+            Text('Roger Culhane',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SizedBox(height: 6),
+            Text('Email: contact@example.com', style: TextStyle(fontSize: 12)),
+            SizedBox(height: 6),
+            Text('Address: 2972 Westheimer Rd. Santa Ana.',
+                style: TextStyle(fontSize: 12)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        // To section
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('To', style: TextStyle(fontSize: 14)),
+            SizedBox(height: 8),
+            Text('Cristofer Levin',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SizedBox(height: 6),
+            Text('Email: contact@example.com', style: TextStyle(fontSize: 12)),
+            SizedBox(height: 6),
+            Text('Address: New York, USA 2707 Davis Avenue',
+                style: TextStyle(fontSize: 12)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        const Text('Order #15478',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 16),
+        // Product
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+              border: Border.all(color: GlobalColors.border, width: 1)),
+          child: Column(children: [
+            Row(
+              children: [
+                Image.asset('assets/product/product-thumb.png',
+                    width: 60, height: 60),
+                const SizedBox(width: 12),
+                const Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Mist Black Triblend'),
+                      Text('Color: White  Size: Medium',
+                          style: TextStyle(fontSize: 12)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Qty: 01'),
+                Text('\$120.00', style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ]),
+        ),
+        const SizedBox(height: 16),
+        // Shipping & Payment
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Shipping Method',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SizedBox(height: 8),
+            Text('FedEx - Take up to 3', style: TextStyle(fontSize: 12)),
+            Text('working days.', style: TextStyle(fontSize: 10)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Payment Method',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            SizedBox(height: 8),
+            Text('Apply Pay Mastercard', style: TextStyle(fontSize: 12)),
+            SizedBox(height: 4),
+            Text('**** **** **** 5874', style: TextStyle(fontSize: 10)),
+          ],
+        ),
+        const SizedBox(height: 16),
+        // Total
+        Column(
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Subtotal'),
+                Text('\$120.00'),
+              ],
+            ),
+            const SizedBox(height: 8),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Shipping Cost'),
+                Text('(+) \$10.00'),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Container(height: 1, color: GlobalColors.border),
+            const SizedBox(height: 8),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Total Payable',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Text('\$130.00',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        // Buttons
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ButtonWidget(
+              btnText: 'Download Invoice',
+              type: ButtonType.primary.type,
+            ),
+            const SizedBox(height: 8),
+            ButtonWidget(
+              btnText: 'Send Invoice',
+              type: ButtonType.success.type,
+            ),
+          ],
+        ),
+      ]),
+    ));
+  }
+
+  @override
   Widget contentDesktopWidget(BuildContext context) {
     return CommonCard(
         child: Padding(

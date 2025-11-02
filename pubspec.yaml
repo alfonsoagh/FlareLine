@@ -43,13 +43,13 @@ dependencies:
 
   popover: ^0.2.9
 
-  syncfusion_flutter_charts: ^27.1.58
+  syncfusion_flutter_charts: ^31.2.4
 
-  syncfusion_flutter_datagrid: ^27.1.58
+  syncfusion_flutter_datagrid: ^31.2.4
 
-  syncfusion_flutter_maps: ^27.1.58
+  syncfusion_flutter_maps: ^31.2.4
 
-  syncfusion_flutter_calendar: ^27.1.58
+  syncfusion_flutter_calendar: ^31.2.4
 
   transparent_image: ^2.0.1
 

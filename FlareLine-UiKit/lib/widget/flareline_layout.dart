@@ -102,22 +102,24 @@ abstract class FlarelineLayoutWidget extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 0,
       ),
-      body: ResponsiveBuilder(
-        builder: (context, sizingInformation) {
-          // Check the sizing information here and return your UI
-          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-            return Row(
-              children: [
-                if (showSideBar) sideBarWidget(context),
-                Expanded(child: rightContentWidget(context))
-              ],
-            );
-          }
+      body: SafeArea(
+        child: ResponsiveBuilder(
+          builder: (context, sizingInformation) {
+            // Check the sizing information here and return your UI
+            if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+              return Row(
+                children: [
+                  if (showSideBar) sideBarWidget(context),
+                  Expanded(child: rightContentWidget(context))
+                ],
+              );
+            }
 
-          return rightContentWidget(context);
-        },
+            return rightContentWidget(context);
+          },
+        ),
       ),
-      drawer: sideBarWidget(context),
+      drawer: SafeArea(child: sideBarWidget(context)),
     );
   }
 

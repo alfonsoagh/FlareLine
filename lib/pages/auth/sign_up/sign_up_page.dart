@@ -15,17 +15,21 @@ class SignUpWidget extends BaseWidget<SignUpProvider> {
   @override
   Widget bodyWidget(
       BuildContext context, SignUpProvider viewModel, Widget? child) {
-    return Scaffold(body: ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        // Check the sizing information here and return your UI
-        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-          return Center(
-            child: contentDesktopWidget(context,viewModel),
-          );
-        }
+    return Scaffold(body: SafeArea(
+      child: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          // Check the sizing information here and return your UI
+          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+            return Center(
+              child: contentDesktopWidget(context,viewModel),
+            );
+          }
 
-        return contentMobileWidget(context,viewModel);
-      },
+          return SingleChildScrollView(
+            child: contentMobileWidget(context,viewModel),
+          );
+        },
+      ),
     ));
   }
 
@@ -73,14 +77,17 @@ class SignUpWidget extends BaseWidget<SignUpProvider> {
 
   Widget contentMobileWidget(BuildContext context, SignUpProvider viewModel) {
     return CommonCard(
-      padding: const EdgeInsets.symmetric(vertical: 60),
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
       child: _formWidget(context,viewModel),
     );
   }
 
   Widget _formWidget(BuildContext context, SignUpProvider viewModel) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double horizontalPadding = screenWidth > 600 ? 50 : 20;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -66,7 +66,7 @@ class ToolBarWidget extends StatelessWidget {
           return const SizedBox();
         }),
         const Spacer(),
-        if (showChangeTheme ?? false) const ToggleWidget(),
+        // Theme toggle removed - CETAM uses light mode only
         const SizedBox(
           width: 10,
         ),

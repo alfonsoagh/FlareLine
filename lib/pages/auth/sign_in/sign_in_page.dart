@@ -15,17 +15,21 @@ class SignInWidget extends BaseWidget<SignInProvider> {
   @override
   Widget bodyWidget(
       BuildContext context, SignInProvider viewModel, Widget? child) {
-    return Scaffold(body: ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        // Check the sizing information here and return your UI
-        if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
-          return Center(
-            child: contentDesktopWidget(context, viewModel),
-          );
-        }
+    return Scaffold(body: SafeArea(
+      child: ResponsiveBuilder(
+        builder: (context, sizingInformation) {
+          // Check the sizing information here and return your UI
+          if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
+            return Center(
+              child: contentDesktopWidget(context, viewModel),
+            );
+          }
 
-        return contentMobileWidget(context,viewModel);
-      },
+          return SingleChildScrollView(
+            child: contentMobileWidget(context,viewModel),
+          );
+        },
+      ),
     ));
   }
 
@@ -80,13 +84,16 @@ class SignInWidget extends BaseWidget<SignInProvider> {
   @override
   Widget contentMobileWidget(BuildContext context,SignInProvider viewModel) {
     return CommonCard(
-        padding: const EdgeInsets.symmetric(vertical: 60),
+        padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
         child: _signInFormWidget(context,viewModel));
   }
 
   Widget _signInFormWidget(BuildContext context,SignInProvider viewModel) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double horizontalPadding = screenWidth > 600 ? 50 : 20;
+
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
+        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

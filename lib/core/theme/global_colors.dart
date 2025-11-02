@@ -1,46 +1,33 @@
 import 'dart:ui';
 
-class GlobalColors{
-  static const Color primary = Color(0xFF3C50E0);
-
-  static const Color darkBackgroundColor = Color(0xff1E1C2A);
-
-  static const Color darkAppBar = Color(0xFF1C2434);
-
-  static const Color secondary = Color(0xFF80CAEE);
-
-  static const Color text = Color(0xFF64748B);
-
-  static const Color background = Color(0xFFEFF4FB);
-
-  static const Color border = Color(0xFFE5E8EC);
-
-  static const Color darkText = Color(0xFFDEE4EE);
-
-  static const Color darkTextBody = Color(0xFF8A99AF);
-
-  static const Color darkBlackText = Color(0xFF1C2434);
-
-  static const Color normal = Color(0xFF606266);
-
-  static const Color info = Color(0xFF8A99AF);
-
+class GlobalColors {
+  // CETAM Institutional Colors
+  static const Color primary = Color(0xFF1F2937);
+  static const Color secondary = Color(0xFFFB503B);
+  static const Color tertiary = Color(0xFF31316A);
   static const Color success = Color(0xFF10B981);
+  static const Color info = Color(0xFF2361CE);
+  static const Color warning = Color(0xFFF3C78E);
+  static const Color danger = Color(0xFFE11D48);
+  static const Color light = Color(0xFFD1D5DB);
+  static const Color dark = Color(0xFF1F2937);
+  static const Color white = Color(0xFFFFFFFF);
 
-  static const Color warn = Color(0xFFF0950C);
+  // Additional UI colors based on CETAM palette
+  static const Color background = Color(0xFFF9FAFB);
+  static const Color border = Color(0xFFE5E7EB);
+  static const Color text = Color(0xFF374151);
+  static const Color textSecondary = Color(0xFF6B7280);
 
-  static const Color danger = Color(0xFFFB5454);
-
-  static const Color gray = Color(0xFFEFF4FB);
-
-  static const Color dark = Color(0xFF1C2434);
-
-  static const Color sideBar = Color(0xFF1C2434);
-
-  static const Color lightGray = Color(0xFFF7F9FC);
-
-
+  // Compatibility aliases (using CETAM colors)
+  static const Color darkBackgroundColor = Color(0xFF1F2937);
+  static const Color darkAppBar = Color(0xFF1F2937);
+  static const Color darkText = Color(0xFFE5E7EB);
+  static const Color darkTextBody = Color(0xFF9CA3AF);
+  static const Color darkBlackText = Color(0xFF1F2937);
+  static const Color normal = Color(0xFF6B7280);
+  static const Color warn = Color(0xFFF3C78E);
+  static const Color gray = Color(0xFFF3F4F6);
+  static const Color sideBar = Color(0xFF1F2937);
+  static const Color lightGray = Color(0xFFF9FAFB);
 }
-
-
-
