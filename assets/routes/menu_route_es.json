@@ -106,6 +106,14 @@
           {
             "menuName": "Cards",
             "path": "/cards"
+          },
+          {
+            "menuName": "Loading States",
+            "path": "/loadingStates"
+          },
+          {
+            "menuName": "Indicadores de Progreso",
+            "path": "/progressIndicators"
           }
         ]
       },

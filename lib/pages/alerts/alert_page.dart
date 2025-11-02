@@ -78,6 +78,9 @@ class AlertPage extends LayoutWidget {
                     QuickAlert.show(
                       context: context,
                       type: QuickAlertType.info,
+                      title: 'Información',
+                      text: 'Esta es una alerta informativa. Los datos se han cargado correctamente.',
+                      confirmBtnText: 'Entendido',
                       confirmBtnColor: GlobalColors.info,
                     ); //
                   },
@@ -92,6 +95,9 @@ class AlertPage extends LayoutWidget {
                     QuickAlert.show(
                       context: context,
                       type: QuickAlertType.success,
+                      title: 'Éxito',
+                      text: 'La operación se completó exitosamente. Todos los cambios han sido guardados.',
+                      confirmBtnText: 'Aceptar',
                       confirmBtnColor: GlobalColors.success,
                     );
                   },
@@ -106,6 +112,9 @@ class AlertPage extends LayoutWidget {
                     QuickAlert.show(
                       context: context,
                       type: QuickAlertType.warning,
+                      title: 'Advertencia',
+                      text: 'Por favor revise los datos antes de continuar. Esta acción requiere su atención.',
+                      confirmBtnText: 'Entiendo',
                       confirmBtnColor: GlobalColors.warn,
                     );
                   },
@@ -120,6 +129,9 @@ class AlertPage extends LayoutWidget {
                     QuickAlert.show(
                       context: context,
                       type: QuickAlertType.error,
+                      title: 'Error',
+                      text: 'Ha ocurrido un error al procesar la solicitud. Por favor intente nuevamente.',
+                      confirmBtnText: 'Cerrar',
                       confirmBtnColor: GlobalColors.danger,
                     );
                   },
@@ -134,6 +146,10 @@ class AlertPage extends LayoutWidget {
                     QuickAlert.show(
                       context: context,
                       type: QuickAlertType.confirm,
+                      title: 'Confirmar Acción',
+                      text: '¿Está seguro que desea continuar con esta acción? Esta operación no se puede deshacer.',
+                      confirmBtnText: 'Sí, continuar',
+                      cancelBtnText: 'Cancelar',
                       confirmBtnColor: GlobalColors.dark,
                       cancelBtnTextStyle: const TextStyle(color: GlobalColors.dark),
                     );

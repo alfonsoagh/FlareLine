@@ -9,6 +9,8 @@ import 'package:flareline/pages/button/button_page.dart' deferred as button;
 import 'package:flareline/pages/ui_elements/text_field_page.dart' deferred as textField;
 import 'package:flareline/pages/ui_elements/image_upload_page.dart' deferred as imageUpload;
 import 'package:flareline/pages/ui_elements/cards_page.dart' deferred as cards;
+import 'package:flareline/pages/ui_elements/loading_states_page.dart' deferred as loadingStates;
+import 'package:flareline/pages/ui_elements/progress_indicators_page.dart' deferred as progressIndicators;
 import 'package:flareline/pages/form/form_elements_page.dart' deferred as formElements;
 import 'package:flareline/pages/form/form_layout_page.dart' deferred as formLayout;
 import 'package:flareline/pages/auth/sign_in/sign_in_page.dart' deferred as signIn;
@@ -57,6 +59,8 @@ final List<Map<String, Object>> MAIN_PAGES = [
   {'routerPath': '/textFields', 'widget': DeferredWidget(textField.loadLibrary, () => textField.TextFieldPage())},
   {'routerPath': '/imageUpload', 'widget': DeferredWidget(imageUpload.loadLibrary, () => imageUpload.ImageUploadPage())},
   {'routerPath': '/cards', 'widget': DeferredWidget(cards.loadLibrary, () => cards.CardsPage())},
+  {'routerPath': '/loadingStates', 'widget': DeferredWidget(loadingStates.loadLibrary, () => loadingStates.LoadingStatesPage())},
+  {'routerPath': '/progressIndicators', 'widget': DeferredWidget(progressIndicators.loadLibrary, () => progressIndicators.ProgressIndicatorsPage())},
 ];
 
 class RouteConfiguration {
